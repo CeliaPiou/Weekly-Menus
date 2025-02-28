@@ -1,0 +1,95 @@
+h1 {
+  padding-bottom: 15px;
+  border-bottom: 7px solid white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+
+  .day-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 19%;
+    height: 80vh;
+
+    .color-day {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 20px;
+      height: 70vh;
+      width: 90%;
+    }
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  gap: 8px;
+  background-color: rgb(255, 255, 255);
+  width: 85%;
+  height: 35%;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+
+
+  input {
+    padding: 7px 0 7px 0;
+    border-radius: 20px;
+    border: none;
+    background-color: #D9D9D9 ;
+    box-shadow: inset 3px 5px 4px 0px rgba(0, 0, 0, 0.11);
+    color: black;
+    width: 90%;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.08rem;
+  }
+
+  button {
+    background-color: #D9D9D9 ;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.255);
+    border-radius: 20px;
+    color: black;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    overflow: hidden;    
+    width: 80%;
+    font-size: 14px;
+  }
+}
+#Lundi {
+  .color-day {background-color: #E6C229}
+  h2 {color: #E6C229}
+}
+#Mardi {
+  .color-day {background-color: #F17105}
+  h2 {color: #F17105}
+}
+#Mercredi {
+  .color-day {background-color: #D11149}
+  h2 {color: #D11149}
+}
+#Jeudi {
+  .color-day {background-color: #6610F2}
+  h2 {color: #6610F2}
+}
+#Vendredi {
+  .color-day {background-color: #1A8FE3}
+  h2 {color: #1A8FE3}
+
+}
