@@ -1,3 +1,7 @@
+body {
+  font-family: 'Jost';
+}
+
 h1 {
   padding-bottom: 15px;
   border-bottom: 7px solid white;
@@ -42,19 +46,27 @@ h1 {
   height: 35%;
   margin-bottom: 20px;
   box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+  overflow-y: hidden;
+
+  .buttons {
+    display: flex;
+    gap: 2vw;
+  }
+
+  p {
+    color: black;
+  }
 
 
   input {
     padding: 7px 0 7px 0;
     border-radius: 20px;
     border: none;
-    background-color: #D9D9D9 ;
+    background-color: #D9D9D9;
     box-shadow: inset 3px 5px 4px 0px rgba(0, 0, 0, 0.11);
     color: black;
     width: 90%;
-    text-transform: uppercase;
     font-size: 12px;
-    letter-spacing: 0.08rem;
   }
 
   button {
