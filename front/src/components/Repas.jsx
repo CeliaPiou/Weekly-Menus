@@ -5,7 +5,7 @@ const Saisie = ({ handleSubmit, handleChange, handleImgChange }) => {
   return (
     <form className='card' onSubmit={handleSubmit}>
         <input type='text' name="visuel"  onChange={handleImgChange} id="img-plat" placeholder="  Visuel"></input>
-        <input type='text' name="name" required onChange={handleChange} id="name-plat" placeholder="  Votre plat"></input>
+        <input type='text' name="name" required onChange={handleChange} id="name-plat" placeholder="Votre plat"></input>
         <button>ENVOYER</button>
     </form>
   )
@@ -14,7 +14,6 @@ const Saisie = ({ handleSubmit, handleChange, handleImgChange }) => {
 const ButtonDelete = ({ plat, deletePlat }) => {
 
   return (
-
 
     <button id='delete'>
       <img src="https://i.ibb.co/qLnpv7rb/trash.png" 
@@ -28,7 +27,15 @@ const ButtonDelete = ({ plat, deletePlat }) => {
 
 }
 
-const Display = ({ plat, img, deletePlat }) => {
+const ButtonModify = ({ plat, modifyPlat }) => {
+  return (
+    <button id='modify' onClick={modifyPlat}>
+      <img src="https://i.ibb.co/dwZfRd1M/pen-1.png" width={20} alt="pen" border="0" />
+    </button>   
+  )
+}
+
+const Display = ({ plat, img, deletePlat, modifyPlat }) => {
 
   const [ picture, setPicture ] = useState("");
   const [ noPicture, setNoPicture ] = useState('https://img.freepik.com/psd-gratuit/conception-du-logo-du-restaurant_23-2151249852.jpg')
@@ -58,9 +65,7 @@ const Display = ({ plat, img, deletePlat }) => {
       <p>{plat}</p>
 
       <div className='buttons'>
-        <button id='modify'>
-          <img src="https://i.ibb.co/dwZfRd1M/pen-1.png" width={20} alt="pen" border="0" />
-        </button>       
+        < ButtonModify modifyPlat={modifyPlat}/>       
         < ButtonDelete plat={plat} deletePlat={deletePlat} />
       </div>
 
@@ -94,6 +99,19 @@ const Repas = () => {
     setRepasIsDefined(false);
   };
 
+  const modifyPlat = () => {
+    setRepasIsDefined(false);
+
+    return (
+      <form className='card' onSubmit={handleSubmit}>
+        <p> caca </p>
+        <input type='text' name="visuel"  onChange={handleImgChange} id="img-plat" placeholder={plat}></input>
+        <input type='text' name="name" required onChange={handleChange} id="name-plat" placeholder="  Votre plat"></input>
+        <button>MODIFIER</button>
+      </form>
+    )
+  }
+
 
   return (
 
@@ -101,7 +119,7 @@ const Repas = () => {
           {!repasIsDefined ? 
           < Saisie handleSubmit={handleSubmit} handleChange={handleChange} handleImgChange={handleImgChange} /> 
           : 
-          < Display plat={plat} img={img}  deletePlat={deletePlat} />}
+          < Display plat={plat} img={img}  modifyPlat={modifyPlat} deletePlat={deletePlat} />}
     </>
    
   )
